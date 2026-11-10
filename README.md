@@ -1,49 +1,62 @@
-# 🚀 FreeRTOS Advanced Embedded Systems & Industrial Smart Grid Gateway
+🚀 FreeRTOS Advanced Embedded Systems & Industrial Smart Grid Gateway
+A collection of embedded firmware projects exploring FreeRTOS, real-time task scheduling, control systems, industrial communication, and microcontroller-based applications.
 
-Welcome to the **FreeRTOS Advanced Embedded Systems Repository**. This repository contains production-grade, highly optimized C firmware projects targeting real-time microcontroller architectures (Raspberry Pi Pico RP2040, STM32, ESP32).
+The repository targets microcontroller platforms including the Raspberry Pi Pico (RP2040), STM32, and ESP32. Each project focuses on practical embedded design concepts, from interrupt handling and synchronization to telemetry and closed-loop control.
+📂 Project Portfolio
+Project	Key Technical Features	Source Code
+🤖 Dual Motor Robot Controller	RP2040, FreeRTOS, 50 Hz PID control, quadrature encoder feedback	[View Source](./Pico_Dual_Motor_FreeRTOS.c)
+🛡️ Industrial Safety & Protection Monitor	Analog watchdog interrupt, CAN telemetry queue, fault monitoring	[View Source](./FreeRTOS_Industrial_Monitor.c)
+⚙️ 12-Axis Industrial Servo Controller	Mutex-based bus protection, queues, priority inversion management	[View Source](./FreeRTOS%20%20Motor%20control.c)
+🚥 4-Way Traffic Light Controller	Finite State Machine (FSM), emergency vehicle handling, interrupt-driven events	[View Source](./FreeRTOS_Traffic_Light.c)
+🔋 EV Battery Management System	State of Charge (SoC) estimation, coulomb counting, 8-cell passive balancing	[View Source](./FreeRTOS_EV_BMS_Controller.c)
+🛸 Autonomous UAV Flight Computer	Quaternion-based filtering, 1 kHz estimation loop, 400 Hz PID control	[View Source](./FreeRTOS_UAV_Flight_Controller.c)
+⚡ Industrial Smart Grid Gateway	Modbus RTU, CANopen, lock-free ring buffer, EEPROM management, UART CLI	[View Source](./FreeRTOS_Industrial_Smart_Grid_Gateway.c)
 
----
 
-## 📂 Project Showcase & Code Index
+⚡ Flagship Project: Industrial Smart Grid Telemetry Gateway
+The Industrial Smart Grid Gateway is the flagship project in this repository. It combines real-time task scheduling, industrial communication protocols, telemetry processing, and fault management in a single firmware architecture.
+Core Architecture
+- 8 concurrent FreeRTOS tasks: Telemetry acquisition, power analysis, Modbus RTU, CANopen, fault management, EEPROM storage, CLI shell, and watchdog supervision.
+- Industrial communication: Modbus RTU Master with CRC16 and CANopen TPDO/RPDO communication.
+- Data handling: Lock-free ring buffer for ADC measurement streaming.
+- Fault management: Dedicated fault monitoring and watchdog supervision.
+- Diagnostics: Interactive UART-based Command Line Interface (CLI).
+- Embedded storage: EEPROM-based configuration and data management.
+Implementation note: The flagship source file is reported as 1,026 lines. See the linked source for the implementation details.
 
-| Project Name | Primary Features | Source Code |
-| :--- | :--- | :--- |
-| 🤖 **Dual Motor Robot Controller** | RP2040 FreeRTOS, 50Hz PID Loop, Quadrature Encoders | [`Pico_Dual_Motor_FreeRTOS.c`](./Pico_Dual_Motor_FreeRTOS.c) |
-| 🛡️ **Industrial Safety & Protection Monitor** | Sub-µs Analog Watchdog ISR, CAN Telemetry Queue | [`FreeRTOS_Industrial_Monitor.c`](./FreeRTOS_Industrial_Monitor.c) |
-| ⚙️ **12-Axis Industrial Servo Controller** | Mutex Bus Locks, Non-blocking Queues, Priority Inversion Avoidance | [`FreeRTOS  Motor control.c`](./FreeRTOS%20%20Motor%20control.c) |
-| 🚥 **4-Way Traffic Light System** | Preemptive Emergency Vehicle ISR Queue, FSM State Machine | [`FreeRTOS_Traffic_Light.c`](./FreeRTOS_Traffic_Light.c) |
-| 🔋 **EV Battery Management System (BMS)** | Coulomb Counting SoC Estimation, 8-Cell Passive Balancing | [`FreeRTOS_EV_BMS_Controller.c`](./FreeRTOS_EV_BMS_Controller.c) |
-| 🛸 **Autonomous UAV Flight Computer** | 1kHz Quaternion Filter, 400Hz Rate PID Mixer | [`FreeRTOS_UAV_Flight_Controller.c`](./FreeRTOS_UAV_Flight_Controller.c) |
-| ⚡ **Industrial Smart Grid Gateway (Flagship)** | **1,026 Lines**: Modbus RTU, CANopen TPDO, Lock-Free Ring Buffer, EEPROM CLI | [`FreeRTOS_Industrial_Smart_Grid_Gateway.c`](./FreeRTOS_Industrial_Smart_Grid_Gateway.c) |
-
----
-
-## ⚡ Flagship Project: Industrial Smart Grid Telemetry Gateway
-
-`FreeRTOS_Industrial_Smart_Grid_Gateway.c` is a 1,000+ line production-grade firmware suite featuring:
-* **8 Concurrent Real-Time Tasks**: Telemetry, Power Analysis, Modbus RTU, CANopen, Fault Management, EEPROM Storage, CLI Shell, & Watchdog.
-* **Protocol Engines**: Hardware CRC16 Modbus RTU Master & CANopen TPDO/RPDO.
-* **High Throughput**: Lock-Free Ring Buffer for streaming ADC measurements without mutex contention.
-* **Diagnostics**: Real-time interactive UART Command Line Interface (CLI).
-
----
-
-## 📅 LinkedIn 3-Day Content Release Schedule
-
-| Day | Topic / Video | Code Permalink |
-| :--- | :--- | :--- |
-| **Day 1** | 🤖 Dual Motor Controller (`dual motor`) | [View Code](https://github.com/dhanush12350/FreeRTOS-Projects/blob/main/Pico_Dual_Motor_FreeRTOS.c) |
-| **Day 4** | 🛡️ Industrial Safety Monitor (`Industrial montoring`) | [View Code](https://github.com/dhanush12350/FreeRTOS-Projects/blob/main/FreeRTOS_Industrial_Monitor.c) |
-| **Day 7** | ⚙️ 12-Axis Servo Controller (`RTOS motor`) | [View Code](https://github.com/dhanush12350/FreeRTOS-Projects/blob/main/FreeRTOS%20%20Motor%20control.c) |
-| **Day 10** | 🚥 4-Way Traffic Light System (`Traffic RTOS`) | [View Code](https://github.com/dhanush12350/FreeRTOS-Projects/blob/main/FreeRTOS_Traffic_Light.c) |
-| **Day 13** | 🔋 EV Battery Management System (BMS) | [View Code](https://github.com/dhanush12350/FreeRTOS-Projects/blob/main/FreeRTOS_EV_BMS_Controller.c) |
-| **Day 16** | 🛸 UAV Flight Controller System | [View Code](https://github.com/dhanush12350/FreeRTOS-Projects/blob/main/FreeRTOS_UAV_Flight_Controller.c) |
-| **Day 19** | ⚡ **FLAGSHIP: Smart Grid Gateway (1,000+ Lines)** | [View Code](https://github.com/dhanush12350/FreeRTOS-Projects/blob/main/FreeRTOS_Industrial_Smart_Grid_Gateway.c) |
-
----
-
-## 🛠️ Build & VS Code Setup
-
-All headers are organized in the [`include/`](./include) directory. 
-
-VS Code IntelliSense is pre-configured in `.vscode/c_cpp_properties.json` for zero build/linter errors.
+[**Explore the Smart Grid Gateway source code →**](./FreeRTOS_Industrial_Smart_Grid_Gateway.c)
+🛠️ Development Environment & Build Setup
+Target Platforms
+- Raspberry Pi Pico (RP2040)
+- STM32 microcontrollers
+- ESP32 microcontrollers
+Technologies & Concepts
+- C programming and Embedded C
+- FreeRTOS task scheduling and synchronization
+- GPIO, ADC, timers, interrupts, and UART
+- CAN and Modbus RTU communication
+- PID control and finite state machines
+- VS Code development environment
+Repository Structure
+FreeRTOS-Projects/
+├── include/
+│   └── Project header files
+├── .vscode/
+│   └── c_cpp_properties.json
+├── Pico_Dual_Motor_FreeRTOS.c
+├── FreeRTOS_Industrial_Monitor.c
+├── FreeRTOS  Motor control.c
+├── FreeRTOS_Traffic_Light.c
+├── FreeRTOS_EV_BMS_Controller.c
+├── FreeRTOS_UAV_Flight_Controller.c
+└── FreeRTOS_Industrial_Smart_Grid_Gateway.c
+VS Code IntelliSense configuration is provided through .vscode/c_cpp_properties.json.
+🎯 Repository Focus
+This portfolio demonstrates practical exploration of:
+- Real-time embedded software architecture
+- RTOS task management, priorities, and synchronization
+- Interrupt-driven system design
+- Motor control and feedback systems
+- Industrial communication and telemetry
+- Embedded diagnostics and fault handling
+Author: Dhanush SJ
